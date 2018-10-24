@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.204.128:4000/eureka/
+
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.204.130:3305/app?zeroDateTimeBehavior=convertToNull
+        username: slave
+        password: BdPassword
+        test-while-idle: true
+        validation-query: SELECT 1
+        max-wait: 10000
+        max-active: 300
+        test-on-borrow: true
+
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5Dialect
+        show-sql: true
+
